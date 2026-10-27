@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pinnacle Paths — Mindful Alpine Wandering</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Epilogue & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim based on Target Design Theme -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#486730",
+            "on-secondary-container": "#7a5a45",
+            "on-surface": "#1b1c1a",
+            "on-primary-fixed": "#0b2000",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "on-background": "#1b1c1a",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#5d412d",
+            "surface-container-high": "#eae8e4",
+            "primary-container": "#87a96b",
+            "secondary-fixed-dim": "#e7bea5",
+            "surface-bright": "#fbf9f5",
+            "inverse-on-surface": "#f2f0ed",
+            "tertiary": "#8a5100",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            "tertiary-container": "#de8c27",
+            "secondary": "#775843",
+            "surface-container-lowest": "#ffffff",
+            "surface-dim": "#dbdad6",
+            "surface-container-highest": "#e4e2de",
+            "on-secondary-fixed": "#2c1607",
+            "surface-variant": "#e4e2de",
+            "background": "#fbf9f5",
+            "on-tertiary-fixed-variant": "#683c00",
+            "on-surface-variant": "#43483d",
+            "surface-container": "#efeeea",
+            "on-primary-container": "#213d0b",
+            "surface": "#fbf9f5",
+            "primary-fixed": "#c9eea9",
+            "tertiary-fixed-dim": "#ffb86d",
+            "secondary-fixed": "#ffdcc6",
+            "surface-container-low": "#f5f3ef",
+            "primary-fixed-dim": "#aed18f",
+            "outline-variant": "#c4c8ba",
+            "outline": "#74796c",
+            "on-primary-fixed-variant": "#314e1b",
+            "primary": "#486730",
+            "error": "#ba1a1a",
+            "tertiary-fixed": "#ffdcbd",
+            "inverse-surface": "#30312e",
+            "secondary-container": "#ffd4ba",
+            "on-tertiary-container": "#512d00",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#aed18f",
+            "on-tertiary-fixed": "#2c1600",
+            // Custom Earthy Clay Trail Tokens
+            "walnut": "#5A3E2B",
+            "sage": "#87A96B",
+            "amber-glow": "#D5851F"
+          },
+          "borderRadius": {
+            "DEFAULT": "1.5rem",
+            "lg": "2rem",
+            "xl": "2.5rem",
+            "2xl": "3rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Epilogue", "sans-serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Claymorphic Tactile Effects */
+    .clay-card {
+      background: #FAF7F2;
+      box-shadow: 10px 10px 22px rgba(90, 62, 43, 0.06),
+                  -10px -10px 22px rgba(255, 255, 255, 0.95),
+                  inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    
+    .clay-card-inset {
+      background: #F3EFE8;
+      box-shadow: inset 4px 4px 10px rgba(90, 62, 43, 0.05),
+                  inset -4px -4px 10px rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(228, 222, 214, 0.6);
+    }
+
+    .clay-button-sage {
+      background: linear-gradient(135deg, #96b87b 0%, #87a96b 100%);
+      box-shadow: 6px 6px 14px rgba(135, 169, 107, 0.35),
+                  -4px -4px 10px rgba(255, 255, 255, 0.7),
+                  inset 1px 1px 2px rgba(255, 255, 255, 0.5);
+    }
+    .clay-button-sage:hover {
+      box-shadow: 4px 4px 8px rgba(135, 169, 107, 0.4),
+                  inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+      transform: translateY(1px);
+    }
+
+    .clay-button-cream {
+      background: #FAF7F2;
+      box-shadow: 6px 6px 14px rgba(90, 62, 43, 0.08),
+                  -6px -6px 14px rgba(255, 255, 255, 0.95),
+                  inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+    .clay-button-cream:hover {
+      box-shadow: 3px 3px 8px rgba(90, 62, 43, 0.09),
+                  inset 1px 1px 3px rgba(90, 62, 43, 0.05);
+      transform: translateY(1px);
+    }
+
+    .clay-pill-amber {
+      background: linear-gradient(135deg, #e3932e 0%, #d5851f 100%);
+      box-shadow: 3px 3px 8px rgba(213, 133, 31, 0.3),
+                  inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+    }
+
+    .clay-pill-subtle {
+      background: #F4EFEB;
+      box-shadow: 3px 3px 7px rgba(90, 62, 43, 0.06),
+                  -3px -3px 7px rgba(255, 255, 255, 0.9),
+                  inset 1px 1px 1px rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased selection:bg-secondary-container selection:text-walnut min-h-screen flex flex-col">
+<!-- Clay Floating Header -->
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-surface/85 py-3 transition-all duration-200">
+<div class="max-w-6xl mx-auto px-6">
+<div class="clay-card rounded-full px-6 py-2.5 flex justify-between items-center">
+<!-- Brand Logo -->
+<a class="font-headline font-semibold text-lg text-walnut flex items-center gap-2 tracking-tight group" href="#">
+<span class="w-3.5 h-3.5 rounded-full bg-sage shadow-inner group-hover:scale-110 transition-transform"></span>
+<span>Pinnacle Paths</span>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-walnut/70">
+<a class="text-walnut font-bold pb-0.5 border-b-2 border-sage" href="#explore">Explore</a>
+<a class="hover:text-walnut transition-colors" href="#planner">Planner</a>
+<a class="hover:text-walnut transition-colors" href="#community">Community</a>
+<a class="hover:text-walnut transition-colors" href="#medals">Badges</a>
+</nav>
+<!-- Trailing Action -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-block text-xs font-semibold text-walnut/80 hover:text-walnut px-3 py-1.5" href="#login">
+          Log In
+        </a>
+<a class="clay-button-sage text-white text-xs font-semibold px-5 py-2 rounded-full transition-all duration-200" href="#plan">
+          Start Trail
+        </a>
+<button aria-label="Trekker profile" class="clay-pill-subtle w-8 h-8 rounded-full flex items-center justify-center text-walnut/80 hover:text-walnut">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Hero Canvas -->
+<main class="flex-grow">
+<!-- Hero Section with Himalayan Vista -->
+<section class="relative w-full min-h-[88vh] flex flex-col justify-between overflow-hidden">
+<!-- Image Canvas -->
+<div class="absolute inset-0 z-0">
+<img alt="Annapurna Base Camp at dawn" class="w-full h-full object-cover object-center scale-[1.01]" src="https://lh3.googleusercontent.com/aida/AEtjO1VtlAjLqn0_RAZgFotMT4X8I3Fh1DVQy-kcpDHDfm5ozrqLaxcQ4e-47d5x4pcd02CEEroheQSxZXsOal9_RJn50x4Bl3hT1Mglym8-qcnvrji0yVudCoI7z8hYIo1neHFt4jR_pIjrNnru5b5aCtQk8YpyfKclNA5yXh8oOvniuSoI_X4i3YuPWFVBk7vVhqsJoDEptxXeP5PrwdshxnXM_VnahqgWstVYiY4_X8yOCbGaMdbHGfwfRW3j"/>
+<!-- Soft Earthy Light Scrim -->
+<div class="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/40 to-background/95 pointer-events-none"></div>
+</div>
+<!-- Breathing Top Space -->
+<div class="relative z-10 pt-16"></div>
+<!-- Hero Content -->
+<div class="relative z-10 max-w-5xl mx-auto px-6 w-full text-center flex flex-col items-center py-12">
+<!-- Location Tag -->
+<div class="clay-pill-subtle inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 text-xs font-semibold text-walnut">
+<span class="w-2 h-2 rounded-full bg-amber-glow"></span>
+<span>Annapurna Sanctuary • 4,130m</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline text-4xl sm:text-5xl md:text-6xl text-walnut font-normal tracking-tight max-w-3xl leading-[1.15]">
+        money would return but your 20's won't
+      </h1>
+<!-- Reduced, Punchy Subtitle -->
+<p class="mt-4 font-body text-base md:text-lg text-walnut/80 max-w-xl font-normal">
+        Curated independent ridges for free spirits.
+      </p>
+<!-- Clay CTAs -->
+<div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+<a class="clay-button-sage text-white px-7 py-3 rounded-full text-sm font-semibold flex items-center gap-2 transition-all duration-200" href="#plan">
+<span>Explore Routes</span>
+<span class="material-symbols-outlined text-base">north_east</span>
+</a>
+<a class="clay-button-cream text-walnut px-7 py-3 rounded-full text-sm font-semibold transition-all duration-200" href="#guide">
+          Field Ethics
+        </a>
+</div>
+</div>
+<!-- Floating Status Pill Ticker -->
+<div class="relative z-10 w-full pb-8 px-6">
+<div class="max-w-4xl mx-auto clay-card rounded-full py-2.5 px-6 flex flex-wrap items-center justify-between gap-4 text-xs font-medium text-walnut/80">
+<div class="flex items-center gap-5 flex-wrap">
+<span class="flex items-center gap-1.5 text-walnut font-semibold">
+<span class="w-2 h-2 rounded-full bg-sage"></span>
+            Spring Bloom Active
+          </span>
+<span class="text-walnut/30">•</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-sage">eco</span>
+            0% Agency Markups
+          </span>
+<span class="text-walnut/30">•</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-amber-glow">home</span>
+            Direct Teahouses
+          </span>
+</div>
+<a class="inline-flex items-center gap-1 font-semibold text-walnut hover:text-sage transition-colors ml-auto sm:ml-0" href="#open-treks">
+<span>Open Treks</span>
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Open Treks Bento Section -->
+<section class="max-w-6xl mx-auto px-6 py-16" id="open-treks">
+<!-- Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-3">
+<div>
+<span class="clay-pill-amber text-white text-[11px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-2">
+          Seasonal Trails
+        </span>
+<h2 class="font-headline text-3xl font-semibold text-walnut">Active Routes</h2>
+</div>
+<p class="text-xs uppercase tracking-widest text-walnut/60 font-semibold">
+        Daily Snowpack &amp; Teahouse Sync
+      </p>
+</div>
+<!-- Clean, Low-Density Clay Cards -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Card 1: Annapurna Base Camp (8 cols) -->
+<div class="md:col-span-8 clay-card rounded-2xl p-7 flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
+<div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+<div class="flex items-center gap-2">
+<span class="clay-button-sage text-white text-xs font-semibold px-3 py-1 rounded-full">High Pass</span>
+<span class="clay-pill-subtle text-walnut text-xs font-semibold px-3 py-1 rounded-full">11 Days</span>
+</div>
+<div class="clay-pill-subtle text-xs font-semibold text-walnut/70 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-amber-glow">ac_unit</span>
+<span>-4°C Summit</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl font-semibold text-walnut mb-2">Annapurna Sanctuary</h3>
+<p class="text-sm text-walnut/70 font-normal">Pristine amphitheater of 8,000m peaks &amp; authentic Gurung lodges.</p>
+</div>
+<!-- Metrics Strip -->
+<div class="mt-8 pt-5 border-t border-walnut/10 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-6">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-walnut/50 font-semibold block">Apex</span>
+<span class="font-headline text-xl font-semibold text-walnut">4,130m</span>
+</div>
+<div class="w-px h-7 bg-walnut/15"></div>
+<div>
+<span class="text-[11px] uppercase tracking-wider text-walnut/50 font-semibold block">Pace</span>
+<span class="font-headline text-xl font-semibold text-walnut">14 km/d</span>
+</div>
+<div class="w-px h-7 bg-walnut/15"></div>
+<div>
+<span class="text-[11px] uppercase tracking-wider text-walnut/50 font-semibold block">Permit</span>
+<span class="font-headline text-xl font-semibold text-walnut">ACAP</span>
+</div>
+</div>
+<a class="clay-button-cream text-walnut text-xs font-semibold px-5 py-2.5 rounded-full transition-all" href="#annapurna">
+            Trail Details
+          </a>
+</div>
+</div>
+<!-- Card 2: Langtang Valley (4 cols) -->
+<div class="md:col-span-4 clay-card rounded-2xl p-7 flex flex-col justify-between hover:translate-y-[-2px] transition-transform">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="clay-pill-subtle text-sage text-xs font-semibold px-3 py-1 rounded-full">Quiet Valley</span>
+<span class="text-xs font-semibold text-walnut/60">Langtang</span>
+</div>
+<h3 class="font-headline text-xl font-semibold text-walnut mb-1">Kyanjin Gompa</h3>
+<p class="text-sm text-walnut/70 font-normal">Glacial torrents &amp; tranquil high yak pastures.</p>
+</div>
+<div class="mt-6 pt-5 border-t border-walnut/10">
+<div class="flex justify-between items-center text-xs font-semibold mb-4">
+<span class="text-walnut/60">Crowd Density</span>
+<span class="clay-pill-subtle text-sage px-2.5 py-0.5 rounded-full">Low (12/100)</span>
+</div>
+<a class="block w-full text-center clay-button-sage text-white text-xs font-semibold py-2.5 rounded-full transition-all" href="#langtang">
+            View Itinerary
+          </a>
+</div>
+</div>
+<!-- Card 3: Teahouse Direct Code (4 cols) -->
+<div class="md:col-span-4 clay-card rounded-2xl p-7 flex flex-col justify-between">
+<div>
+<span class="clay-pill-subtle text-walnut text-xs font-semibold px-3 py-1 rounded-full inline-block mb-3">Field Code</span>
+<h3 class="font-headline text-lg font-semibold text-walnut mb-1">Teahouse Direct</h3>
+<p class="text-sm text-walnut/70">100% room fees paid straight to local families.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-walnut/10 flex items-center justify-between text-xs font-semibold">
+<span class="text-walnut/60">Intermediaries</span>
+<span class="clay-pill-amber text-white px-2.5 py-0.5 rounded-full">0% Markup</span>
+</div>
+</div>
+<!-- Card 4: Light Kit (8 cols) -->
+<div class="md:col-span-8 clay-card rounded-2xl p-7 flex flex-col justify-between">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+<div>
+<span class="text-[11px] uppercase tracking-wider text-walnut/50 font-semibold block">Fast &amp; Light Kit</span>
+<h3 class="font-headline text-lg font-semibold text-walnut">8.2 kg Base Load</h3>
+</div>
+<span class="clay-button-sage text-white text-xs font-semibold px-3.5 py-1 rounded-full">Sub-10kg Verified</span>
+</div>
+<!-- Sleek Pill Items (Reduced Text) -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-3">
+<div class="clay-card-inset p-3.5 rounded-xl text-center sm:text-left">
+<span class="text-xs font-bold text-walnut block">Warmth</span>
+<span class="text-xs text-walnut/70">-10°C Quilt &amp; Silk</span>
+</div>
+<div class="clay-card-inset p-3.5 rounded-xl text-center sm:text-left">
+<span class="text-xs font-bold text-walnut block">Water</span>
+<span class="text-xs text-walnut/70">0.1μm Micro Filter</span>
+</div>
+<div class="clay-card-inset p-3.5 rounded-xl text-center sm:text-left">
+<span class="text-xs font-bold text-walnut block">Nav</span>
+<span class="text-xs text-walnut/70">Offline Topo Tiles</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-walnut/10 flex items-center justify-between">
+<span class="text-xs text-walnut/60 font-medium">Open Source Packing List</span>
+<a class="inline-flex items-center gap-1 text-xs font-bold text-walnut hover:text-sage transition-colors" href="#kit">
+<span>Gear Matrix</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Clay Footer -->
+<footer class="w-full pb-8 pt-4 px-6">
+<div class="max-w-6xl mx-auto clay-card rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-center md:text-left">
+<span class="font-headline text-base font-semibold text-walnut">Pinnacle Paths</span>
+<p class="text-xs text-walnut/60 mt-0.5">© 2025 Mindful Alpine Wandering.</p>
+</div>
+<nav class="flex flex-wrap justify-center items-center gap-5 text-xs font-semibold text-walnut/70">
+<a class="hover:text-walnut transition-colors" href="#leave-no-trace">Leave No Trace</a>
+<a class="hover:text-walnut transition-colors" href="#trail-ethics">Trail Ethics</a>
+<a class="hover:text-walnut transition-colors" href="#radar">Radar</a>
+<a class="hover:text-walnut transition-colors" href="#privacy">Privacy</a>
+</nav>
+</div>
+</footer>
+</body></html>
