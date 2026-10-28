@@ -21,7 +21,7 @@ const INITIAL_DAYS: DayItinerary[] = [
     subtitle: "Gurung stone trail via Birethanti",
     distance: "11.2 km",
     gain: "+940m",
-    outlay: 28,
+    outlay: 2300,
     elevation: "1,940m",
   },
   {
@@ -30,7 +30,7 @@ const INITIAL_DAYS: DayItinerary[] = [
     subtitle: "Kimrong Khola bridge to high village ridge",
     distance: "13.8 km",
     gain: "+780m",
-    outlay: 32,
+    outlay: 2650,
     elevation: "2,170m",
   },
   {
@@ -39,7 +39,7 @@ const INITIAL_DAYS: DayItinerary[] = [
     subtitle: "Bamboo glades past Hinku rock cave",
     distance: "10.5 km",
     gain: "+1,050m",
-    outlay: 35,
+    outlay: 2900,
     elevation: "3,230m",
   },
   {
@@ -48,7 +48,7 @@ const INITIAL_DAYS: DayItinerary[] = [
     subtitle: "Sunrise sanctuary amphitheater & 8,000m peaks",
     distance: "8.4 km",
     gain: "+900m",
-    outlay: 38,
+    outlay: 3200,
     elevation: "4,130m",
     isApex: true,
   },
@@ -58,7 +58,7 @@ const INITIAL_DAYS: DayItinerary[] = [
     subtitle: "Descent through cascading snow melt streams",
     distance: "14.2 km",
     gain: "-1,820m",
-    outlay: 26,
+    outlay: 2150,
     elevation: "2,310m",
   },
   {
@@ -67,13 +67,13 @@ const INITIAL_DAYS: DayItinerary[] = [
     subtitle: "Natural mineral thermal pools along Modi Khola",
     distance: "9.6 km",
     gain: "-550m",
-    outlay: 25,
+    outlay: 2100,
     elevation: "1,760m",
   },
 ];
 
 export default function PlannerPage() {
-  const [budget, setBudget] = useState(450);
+  const [budget, setBudget] = useState(38000);
   const [days, setDays] = useState(8);
   const [selectedVibe, setSelectedVibe] = useState<"teahouse" | "monastery" | "homestay">("teahouse");
   const [activeTab, setActiveTab] = useState<"blueprint" | "directory">("blueprint");
@@ -81,7 +81,7 @@ export default function PlannerPage() {
   const [notification, setNotification] = useState<string | null>(null);
 
   const dailyAvg = Math.round(budget / days);
-  const estimatedAgencyCost = Math.round(budget * 3.8 + 250);
+  const estimatedAgencyCost = Math.round(budget * 3.2);
   const totalSaved = estimatedAgencyCost - budget;
 
   const handleAdjustDays = (delta: number) => {
@@ -89,8 +89,8 @@ export default function PlannerPage() {
   };
 
   const handleExport = () => {
-    const text = `Pinnacle Paths DIY Itinerary\nDuration: ${days} Days\nBudget: $${budget} USD (~$${dailyAvg}/day)\nStay Vibe: ${selectedVibe}\nEstimated Direct Savings: $${totalSaved}\n\nStages:\n` +
-      itineraryList.map(d => `Day ${d.day}: ${d.title} (${d.distance}, ${d.gain}, $${d.outlay})`).join('\n');
+    const text = `Pinnacle Paths DIY Itinerary\nDuration: ${days} Days\nBudget: ₹${budget.toLocaleString("en-IN")} INR (~₹${dailyAvg.toLocaleString("en-IN")}/day)\nStay Vibe: ${selectedVibe}\nEstimated Direct Savings: ₹${totalSaved.toLocaleString("en-IN")}\n\nStages:\n` +
+      itineraryList.map(d => `Day ${d.day}: ${d.title} (${d.distance}, ${d.gain}, ₹${d.outlay.toLocaleString("en-IN")})`).join('\n');
     
     const blob = new Blob([text], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
@@ -155,23 +155,23 @@ export default function PlannerPage() {
                 Budget Total
               </label>
               <span className="text-lg font-headline font-bold text-primary">
-                ${budget} USD
+                ₹{budget.toLocaleString("en-IN")} INR
               </span>
             </div>
             <input
               id="budgetRange"
               type="range"
-              min="200"
-              max="1000"
-              step="25"
+              min="15000"
+              max="85000"
+              step="1000"
               value={budget}
               onChange={(e) => setBudget(Number(e.target.value))}
               className="w-full cursor-pointer clay-slider"
             />
             <div className="flex justify-between text-xs font-medium text-walnut/60">
-              <span>$200 Min</span>
-              <span className="text-amber-glow font-bold">${dailyAvg}/day avg</span>
-              <span>$1,000 Max</span>
+              <span>₹15,000 Min</span>
+              <span className="text-amber-glow font-bold">₹{dailyAvg.toLocaleString("en-IN")}/day avg</span>
+              <span>₹85,000 Max</span>
             </div>
           </div>
 
@@ -331,7 +331,7 @@ export default function PlannerPage() {
                 Independent Total
               </span>
               <span className="text-base font-headline font-bold text-primary">
-                ${budget} USD
+                ₹{budget.toLocaleString("en-IN")} INR
               </span>
             </div>
             <div className="h-7 w-px bg-walnut/15"></div>
@@ -340,10 +340,10 @@ export default function PlannerPage() {
                 Agency Tour
               </span>
               <span className="text-sm font-headline font-bold line-through text-walnut/40">
-                ${estimatedAgencyCost}
+                ₹{estimatedAgencyCost.toLocaleString("en-IN")}
               </span>
               <span className="text-[10px] font-bold text-red-600 ml-1">
-                +${totalSaved} markup
+                +₹{totalSaved.toLocaleString("en-IN")} markup
               </span>
             </div>
           </div>
@@ -401,7 +401,7 @@ export default function PlannerPage() {
 
                 <div className="flex items-center justify-between pt-3 border-t border-walnut/10 text-xs">
                   <span className="font-bold text-primary px-3 py-1 rounded-full bg-primary/10">
-                    ${item.outlay} Outlay
+                    ₹{item.outlay.toLocaleString("en-IN")} Outlay
                   </span>
                   <span className="font-semibold text-secondary">
                     {item.isApex ? "Apex: " : "Elevation: "}
@@ -425,7 +425,7 @@ export default function PlannerPage() {
                   subtitle: "High moraine rest day & sunset panorama",
                   distance: "4.5 km",
                   gain: "+320m",
-                  outlay: 22,
+                  outlay: 1800,
                   elevation: "3,700m",
                 };
                 setItineraryList([...itineraryList, newDay]);
@@ -463,7 +463,7 @@ export default function PlannerPage() {
                   ★ 4.9 • Annapurna South Vista
                 </div>
                 <div className="absolute bottom-4 right-4 bg-primary text-white px-3.5 py-1 rounded-full text-xs font-bold shadow-md">
-                  $16 USD / Night
+                  ₹1,350 / Night
                 </div>
               </div>
 
@@ -485,7 +485,7 @@ export default function PlannerPage() {
                 <div className="grid grid-cols-3 gap-2 text-center text-xs">
                   <div className="p-2.5 rounded-2xl bg-[#f3efe8] shadow-inner">
                     <span className="text-walnut/50 block text-[10px] font-bold">Shower</span>
-                    <span className="font-bold text-walnut">Solar Hot ($2)</span>
+                    <span className="font-bold text-walnut">Solar Hot (₹160)</span>
                   </div>
                   <div className="p-2.5 rounded-2xl bg-[#f3efe8] shadow-inner">
                     <span className="text-walnut/50 block text-[10px] font-bold">Connectivity</span>
@@ -515,7 +515,7 @@ export default function PlannerPage() {
                   <span className="text-[10px] font-bold text-secondary uppercase tracking-wider">
                     Monastery
                   </span>
-                  <span className="text-xs font-bold text-primary">$12 / night</span>
+                  <span className="text-xs font-bold text-primary">₹1,000 / night</span>
                 </div>
                 <h4 className="text-sm font-headline font-bold text-walnut">
                   Ulleri Monk Sanctuary Pods
@@ -537,7 +537,7 @@ export default function PlannerPage() {
                   <span className="text-[10px] font-bold text-secondary uppercase tracking-wider">
                     Homestay
                   </span>
-                  <span className="text-xs font-bold text-primary">$15 / night</span>
+                  <span className="text-xs font-bold text-primary">₹1,250 / night</span>
                 </div>
                 <h4 className="text-sm font-headline font-bold text-walnut">
                   Landruk Heritage Courtyard
@@ -559,7 +559,7 @@ export default function PlannerPage() {
                   <span className="text-[10px] font-bold text-secondary uppercase tracking-wider">
                     Ridge Vista
                   </span>
-                  <span className="text-xs font-bold text-primary">$19 / night</span>
+                  <span className="text-xs font-bold text-primary">₹1,600 / night</span>
                 </div>
                 <h4 className="text-sm font-headline font-bold text-walnut">
                   Poon Hill High Vista Hut

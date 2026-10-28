@@ -152,7 +152,7 @@ export default function TrekDetailClient({ slug }: { slug: string }) {
               4,130m Summit Apex
             </span>
             <span className="text-xs font-bold text-primary font-mono bg-primary/10 px-3 py-1 rounded-full">
-              $22 / day average
+              ₹1,800 / day average
             </span>
           </div>
         </div>

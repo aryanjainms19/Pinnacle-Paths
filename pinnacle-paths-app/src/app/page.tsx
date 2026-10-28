@@ -8,12 +8,12 @@ export default function Home() {
         {/* Background Canvas */}
         <div className="absolute inset-0 z-0">
           <img
-            alt="Annapurna Base Camp at dawn"
+            alt="Snowy apex of Annapurna Base Camp at sunrise"
             className="w-full h-full object-cover object-center scale-[1.01]"
-            src="https://lh3.googleusercontent.com/aida/AEtjO1VtlAjLqn0_RAZgFotMT4X8I3Fh1DVQy-kcpDHDfm5ozrqLaxcQ4e-47d5x4pcd02CEEroheQSxZXsOal9_RJn50x4Bl3hT1Mglym8-qcnvrji0yVudCoI7z8hYIo1neHFt4jR_pIjrNnru5b5aCtQk8YpyfKclNA5yXh8oOvniuSoI_X4i3YuPWFVBk7vVhqsJoDEptxXeP5PrwdshxnXM_VnahqgWstVYiY4_X8yOCbGaMdbHGfwfRW3j"
+            src="/annapurna-sunrise-bg.jpg"
           />
-          {/* Soft Earthy Light Scrim with warm clay tinting */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf9f5]/90 via-[#fbf9f5]/45 to-[#fbf9f5] pointer-events-none"></div>
+          {/* Soft Earthy Dawn Scrim preserving the golden sunrise glow and snowy apex */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#fbf9f5]/70 via-[#fbf9f5]/30 to-[#fbf9f5] pointer-events-none"></div>
         </div>
 
         {/* Breathing Top Space */}
@@ -22,18 +22,18 @@ export default function Home() {
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 w-full text-center flex flex-col items-center py-10">
           {/* Location Tag */}
-          <div className="clay-pill-subtle inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-xs font-bold text-walnut shadow-sm bg-[#faf7f2]">
+          <div className="clay-pill-subtle inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-xs font-bold text-walnut shadow-sm bg-[#faf7f2]/95 backdrop-blur-md border border-white/60">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-glow animate-pulse"></span>
             <span>Annapurna Sanctuary • 4,130m</span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl text-walnut font-bold tracking-tight max-w-3xl leading-[1.12]">
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl text-walnut font-bold tracking-tight max-w-3xl leading-[1.12] drop-shadow-sm">
             money would return but your 20&apos;s won&apos;t
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-4 font-body text-base md:text-lg text-walnut/80 max-w-xl font-medium">
+          <p className="mt-4 font-body text-base md:text-lg text-walnut font-medium max-w-xl bg-[#faf7f2]/80 backdrop-blur-md px-6 py-2.5 rounded-2xl border border-white/50 shadow-sm">
             Curated independent ridges for free spirits. Real teahouse prices, offline elevation tempos, and verified summit logs.
           </p>
 
@@ -58,7 +58,7 @@ export default function Home() {
 
         {/* Floating Status Pill Ticker */}
         <div className="relative z-10 w-full pb-8 px-6">
-          <div className="max-w-4xl mx-auto clay-card rounded-full py-2.5 px-6 flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-walnut/80 bg-[#faf7f2]">
+          <div className="max-w-4xl mx-auto clay-card rounded-full py-2.5 px-6 flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-walnut/80 bg-[#faf7f2]/95 backdrop-blur-md">
             <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
               <span className="flex items-center gap-1.5 text-walnut font-bold">
                 <span className="w-2 h-2 rounded-full bg-sage"></span>
@@ -124,7 +124,7 @@ export default function Home() {
                     11 Days
                   </span>
                   <span className="clay-pill-subtle text-primary text-xs font-bold px-3 py-1 rounded-full bg-[#eef4e8]">
-                    $22 / day
+                    ₹1,800 / day
                   </span>
                 </div>
                 <div className="clay-pill-subtle text-xs font-semibold text-walnut/70 px-3 py-1 rounded-full flex items-center gap-1 bg-[#f4efeb]">
@@ -231,7 +231,7 @@ export default function Home() {
             <div className="mt-6 pt-4 border-t border-walnut/10 flex items-center justify-between text-xs font-semibold">
               <span className="text-walnut/60">Middleman Markup</span>
               <span className="clay-pill-amber text-white px-3 py-0.5 rounded-full font-bold">
-                $0 Agency Fee
+                ₹0 Agency Fee
               </span>
             </div>
           </div>
