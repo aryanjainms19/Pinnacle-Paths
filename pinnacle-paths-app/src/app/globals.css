@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf9f5;
+  --foreground: #1b1c1a;
+  --walnut: #5a3e2b;
+  --sage: #87a96b;
+  --amber-glow: #d5851f;
+  --surface: #fbf9f5;
+  --surface-warm: #faf7f2;
+  --surface-container: #efeeea;
+  --surface-container-high: #eae8e4;
+  --surface-container-low: #f5f3ef;
+}
+
+@theme {
+  --color-primary: #486730;
+  --color-primary-container: #87a96b;
+  --color-on-primary: #ffffff;
+  --color-secondary: #5a3e2b;
+  --color-secondary-container: #ffd4ba;
+  --color-tertiary: #8a5100;
+  --color-tertiary-container: #d5851f;
+  --color-amber-glow: #d5851f;
+  --color-sage: #87a96b;
+  --color-walnut: #5a3e2b;
+  --color-background: #fbf9f5;
+  --color-surface: #fbf9f5;
+  --color-surface-warm: #faf7f2;
+  --color-surface-container: #efeeea;
+  --color-surface-container-high: #eae8e4;
+  --color-surface-container-low: #f5f3ef;
+  --color-on-surface: #1b1c1a;
+  --color-on-surface-variant: #43483d;
+  --color-outline: #74796c;
+  --color-outline-variant: #c4c8ba;
+  --font-headline: var(--font-epilogue), "Epilogue", serif, sans-serif;
+  --font-body: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #fbf9f5;
+}
+
+body {
+  background-color: #fbf9f5;
+  color: #1b1c1a;
+  font-family: var(--font-plus-jakarta-sans), "Plus Jakarta Sans", sans-serif;
+  min-height: 100vh;
+}
+
+/* Material Symbols font setup */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+/* Claymorphic Tactile Surfaces */
+.clay-card {
+  background: #faf7f2;
+  box-shadow: 10px 14px 28px rgba(90, 62, 43, 0.07),
+              -8px -8px 22px rgba(255, 255, 255, 0.95),
+              inset 1px 1px 2px rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.clay-card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.clay-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 14px 18px 34px rgba(90, 62, 43, 0.1),
+              -10px -10px 26px rgba(255, 255, 255, 1),
+              inset 1px 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.clay-card-inset, .clay-debossed {
+  background: #f3efe8;
+  box-shadow: inset 3px 4px 8px rgba(90, 62, 43, 0.08),
+              inset -3px -3px 8px rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(228, 222, 214, 0.65);
+}
+
+/* Glassmorphism + Clay Fusion for Interior Pages */
+.glass-clay-card {
+  background: rgba(250, 247, 242, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 10px 14px 30px rgba(90, 62, 43, 0.07),
+              -8px -8px 22px rgba(255, 255, 255, 0.8),
+              inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+}
+
+.glass-clay-card-hover {
+  transition: all 0.25s ease;
+}
+.glass-clay-card-hover:hover {
+  transform: translateY(-3px);
+  background: rgba(252, 250, 246, 0.92);
+  box-shadow: 14px 20px 38px rgba(90, 62, 43, 0.1),
+              -10px -10px 28px rgba(255, 255, 255, 0.95),
+              inset 1.5px 1.5px 2px rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.glass-debossed {
+  background: rgba(243, 239, 232, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 3px 3px 7px rgba(90, 62, 43, 0.07),
+              inset -2px -2px 6px rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(228, 222, 214, 0.55);
+}
+
+.glass-pill {
+  background: rgba(247, 244, 238, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 3px 4px 10px rgba(90, 62, 43, 0.06),
+              -3px -3px 8px rgba(255, 255, 255, 0.85),
+              inset 1px 1px 1px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Buttons */
+.clay-button-sage {
+  background: linear-gradient(135deg, #96b87b 0%, #87a96b 100%);
+  box-shadow: 5px 6px 14px rgba(135, 169, 107, 0.35),
+              -3px -3px 8px rgba(255, 255, 255, 0.7),
+              inset 1px 1px 2px rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  transition: all 0.15s ease;
+}
+.clay-button-sage:hover {
+  box-shadow: 3px 4px 10px rgba(135, 169, 107, 0.45),
+              inset 1.5px 1.5px 3px rgba(0, 0, 0, 0.12);
+  transform: translateY(1px);
+}
+.clay-button-sage:active {
+  transform: scale(0.98);
+}
+
+.clay-button-cream {
+  background: #faf7f2;
+  box-shadow: 5px 6px 14px rgba(90, 62, 43, 0.08),
+              -5px -5px 14px rgba(255, 255, 255, 0.95),
+              inset 1px 1px 2px rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: #5a3e2b;
+  transition: all 0.15s ease;
+}
+.clay-button-cream:hover {
+  box-shadow: 3px 3px 8px rgba(90, 62, 43, 0.09),
+              inset 1px 1px 2px rgba(90, 62, 43, 0.05);
+  transform: translateY(1px);
+}
+
+.clay-button-amber {
+  background: linear-gradient(135deg, #e3932e 0%, #d5851f 100%);
+  box-shadow: 4px 6px 14px rgba(213, 133, 31, 0.3),
+              -2px -2px 6px rgba(255, 255, 255, 0.6),
+              inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  transition: all 0.15s ease;
+}
+.clay-button-amber:hover {
+  transform: translateY(1px);
+  box-shadow: 2px 3px 8px rgba(213, 133, 31, 0.35);
+}
+
+/* Pills & Tags */
+.clay-pill-amber {
+  background: linear-gradient(135deg, #e3932e 0%, #d5851f 100%);
+  box-shadow: 3px 3px 8px rgba(213, 133, 31, 0.28),
+              inset 1px 1px 2px rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+}
+
+.clay-pill-subtle {
+  background: #f4efeb;
+  box-shadow: 3px 3px 7px rgba(90, 62, 43, 0.06),
+              -3px -3px 7px rgba(255, 255, 255, 0.9),
+              inset 1px 1px 1px rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.clay-pill-active {
+  background: #486730;
+  color: #ffffff;
+  box-shadow: inset 3px 4px 8px rgba(40, 58, 26, 0.3),
+              inset -2px -2px 6px rgba(255, 255, 255, 0.3),
+              0 3px 8px rgba(72, 103, 48, 0.2);
+}
+
+/* Custom Clay Slider */
+input[type=range].clay-slider {
+  -webkit-appearance: none;
+  background: #e8e6e1;
+  border-radius: 9999px;
+  height: 10px;
+  box-shadow: inset 2px 2px 4px #cfccc6, inset -2px -2px 4px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+input[type=range].clay-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #87a96b, #6b8d4f);
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 3px 3px 7px rgba(72, 103, 48, 0.35), -2px -2px 5px rgba(255, 255, 255, 0.9), inset 1px 1px 1px rgba(255, 255, 255, 0.6);
+  transition: transform 0.15s ease;
+}
+input[type=range].clay-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+
+/* Hide scrollbar for clean chip rail */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
